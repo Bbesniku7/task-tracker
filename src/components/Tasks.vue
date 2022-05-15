@@ -12,12 +12,12 @@
 // Import Components
 import Task from "./Task.vue";
 export default {
-  components: {
-    Task,
-  },
   name: "Tasks",
   props: {
     tasks: Array,
+  },
+  components: {
+    Task,
   },
   emits: ["delete-task", "toggle-reminder"],
 };

@@ -40,8 +40,16 @@ export default {
     showForm() {
       this.showAddTask = !this.showAddTask;
     },
-    addTask(newTask) {
-      this.tasks = [...this.tasks, newTask];
+    async addTask(newTask) {
+      const res = await fetch("api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(newTask),
+      });
+      const data = await res.json();
+      this.tasks = [...this.tasks, data];
     },
     deleteTask(id) {
       if (confirm("Are you sure you want to Delete?")) {
@@ -55,28 +63,23 @@ export default {
         );
       }
     },
+    async getTasks() {
+      const res = await fetch("api/tasks");
+      const data = await res.json();
+      return data;
+    },
+    async getTask(id) {
+      try {
+        const res = await fetch(`api/tasks${id}`);
+        const data = await res.json;
+        return data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
-  created() {
-    this.tasks = [
-      {
-        id: "1",
-        text: "Ujiti Lulet t hanen",
-        reminder: true,
-        day: "May  1st at 4:30pm",
-      },
-      {
-        id: "2",
-        text: "Takim",
-        reminder: true,
-        day: "May  2st at 6:30pm",
-      },
-      {
-        id: "3",
-        text: "Me msu vue",
-        reminder: false,
-        day: "May  5st at 9:30pm",
-      },
-    ];
+  async created() {
+    this.tasks = await this.getTasks();
   },
 };
 </script>
