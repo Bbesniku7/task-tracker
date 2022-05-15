@@ -1,34 +1,10 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "text": "Doctors Appointment",
-      "day": "March 5th at 2:30pm",
-      "reminder": true
-    },
-    {
-      "id": "2",
-      "text": "Meeting with boss",
-      "day": "March 6th at 1:30pm",
-      "reminder": true
-    },
-    {
-      "id": "3",
-      "text": "Food shopping",
-      "day": "March 7th at 2:00pm",
-      "reminder": false
-    },
-    {
-      "text": "Besnik",
-      "day": "1sdad",
-      "reminder": true,
-      "id": "76ZHRd0"
-    },
-    {
-      "text": "adsadad",
-      "day": "asdadda",
-      "reminder": true,
-      "id": "OmWU9W9"
+      "text": "me msu vue",
+      "day": "May 20 1:30pm",
+      "reminder": false,
+      "id": 1
     }
   ]
 }
